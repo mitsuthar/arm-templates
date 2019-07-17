@@ -140,22 +140,13 @@
         "applicationInsightsKey": {
             "type": "string"
         },
-        "installDynatrace": {
-            "type": "bool"
-        },
-        "dynatraceTenantId": {
-            "type": "securestring"
-        },
-        "dynatraceToken": {
-            "type": "securestring"
-        },
         "adminUsernameSecretName": {
             "type": "securestring"
         },
         "adminPasswordSecretName": {
             "type": "securestring"
         },
-		"adminUsername": {
+        "adminUsername": {
             "type": "securestring"
         },
         "adminPassword": {
@@ -545,19 +536,6 @@
                                             "https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/prepare_vm_disks.ps1"
                                         ],
                                         "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File prepare_vm_disks.ps1"
-                                    }
-                                }
-                            }, {
-                                "name": "oneAgentWindows",
-                                "properties": {
-                                    "autoUpgradeMinorVersion": true,
-                                    "publisher": "dynatrace.ruxit",
-                                    "type": "oneAgentWindows",
-                                    "typeHandlerVersion": "1.0",
-                                    "settings": {
-                                        "tenantId": "[if(parameters('installDynatrace'), parameters('dynatraceTenantId'), '')]",
-                                        "token": "[if(parameters('installDynatrace'), parameters('dynatraceToken'), '')]",
-                                        "server": ""
                                     }
                                 }
                             }
