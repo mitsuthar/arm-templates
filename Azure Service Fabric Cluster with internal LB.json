@@ -154,7 +154,13 @@
         },
         "adminPasswordSecretName": {
             "type": "securestring"
-        }
+        },
+		"adminUsername": {
+            "type": "securestring"
+        },
+        "adminPassword": {
+            "type": "securestring"
+        },
     },
     "variables": {
         "durabilityLevel": "Silver",
